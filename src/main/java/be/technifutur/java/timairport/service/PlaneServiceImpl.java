@@ -1,6 +1,8 @@
 package be.technifutur.java.timairport.service;
 
 import be.technifutur.java.timairport.exceptions.RessourceNotFoundException;
+import be.technifutur.java.timairport.mapper.PlaneMapper;
+import be.technifutur.java.timairport.model.dto.PlaneDTO;
 import be.technifutur.java.timairport.model.entity.Company;
 import be.technifutur.java.timairport.model.entity.Plane;
 import be.technifutur.java.timairport.model.entity.TypePlane;
@@ -16,24 +18,24 @@ public class PlaneServiceImpl implements PlaneService {
     private final PlaneRepository planeRepository;
     private final CompanyRepository companyRepository;
     private final TypePlaneRepository typePlaneRepository;
+//    private final PlaneMapper mapper;
 
     public PlaneServiceImpl(
             PlaneRepository planeRepository,
             CompanyRepository companyRepository,
             TypePlaneRepository typePlaneRepository
+//            PlaneMapper mapper
     ) {
         this.planeRepository = planeRepository;
         this.companyRepository = companyRepository;
         this.typePlaneRepository = typePlaneRepository;
+//        this.mapper = mapper;
     }
 
     @Override
     public void create(PlaneInsertForm form) {
 
-        Plane plane = new Plane();
-
-        plane.setCallSign( form.getCallSign() );
-        plane.setRegistrationDate( form.getRegistrationDate() );
+        Plane plane = form.toEntity();
 
         Company company = companyRepository.findById( form.getCompanyId() )
                 .orElseThrow( RessourceNotFoundException::new );
@@ -45,6 +47,13 @@ public class PlaneServiceImpl implements PlaneService {
 
         planeRepository.save( plane );
 
+    }
+
+    @Override
+    public PlaneDTO getOne(long id) {
+        return planeRepository.findById(id)
+                .map( PlaneDTO::from )
+                .orElseThrow( RessourceNotFoundException::new );
     }
 
 }

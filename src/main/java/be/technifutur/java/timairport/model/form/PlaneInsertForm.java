@@ -1,5 +1,6 @@
 package be.technifutur.java.timairport.model.form;
 
+import be.technifutur.java.timairport.model.entity.Plane;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PastOrPresent;
 import jakarta.validation.constraints.Pattern;
@@ -20,5 +21,17 @@ public class PlaneInsertForm {
     private Long companyId;
     @NotNull
     private Long typeId;
+
+
+    public Plane toEntity(){
+
+        Plane plane = new Plane();
+
+        plane.setCallSign( this.callSign );
+        plane.setRegistrationDate( this.getRegistrationDate() );
+
+        return plane;
+
+    }
 
 }

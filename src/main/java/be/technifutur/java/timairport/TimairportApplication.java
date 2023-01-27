@@ -7,15 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class TimairportApplication {
 
 	public static void main(String[] args) {
-//		SpringApplication.run(TimairportApplication.class, args);
-
-
-		RuntimeException exCause = new RuntimeException("message de cause");
-
-		RuntimeException exEnglobante = new RuntimeException("message de l'exception englobante", exCause);
-
-		throw exEnglobante;
-
+		SpringApplication.run(TimairportApplication.class, args);
 	}
 
 }
