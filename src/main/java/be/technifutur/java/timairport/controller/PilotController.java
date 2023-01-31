@@ -1,7 +1,7 @@
 package be.technifutur.java.timairport.controller;
 
 import be.technifutur.java.timairport.model.dto.PilotDTO;
-import be.technifutur.java.timairport.service.PilotService;
+import be.technifutur.java.timairport.service.impl.PilotService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

@@ -1,4 +1,4 @@
-package be.technifutur.java.timairport.service;
+package be.technifutur.java.timairport.service.impl;
 
 import be.technifutur.java.timairport.model.dto.PilotDTO;
 import be.technifutur.java.timairport.model.entity.Pilot;

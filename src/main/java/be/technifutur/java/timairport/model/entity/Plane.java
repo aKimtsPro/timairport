@@ -25,7 +25,6 @@ public class Plane {
     @Column(name = "in_maintenance", nullable = false)
     private boolean inMaintenance = false;
 
-
     @OneToMany(mappedBy = "plane")
     private List<Flight> flights;
 

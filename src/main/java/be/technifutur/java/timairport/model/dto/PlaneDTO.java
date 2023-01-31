@@ -42,7 +42,7 @@ public class PlaneDTO {
 
         return PlaneDTO.builder()
                 .id( entity.getId() )
-                .inMaintenance(entity.isInMaintenance() )
+                .inMaintenance( entity.isInMaintenance() )
                 .callSign( entity.getCallSign() )
                 .registrationDate( entity.getRegistrationDate() )
                 .company(
