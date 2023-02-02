@@ -5,7 +5,6 @@ import be.technifutur.Not0;
 import be.technifutur.java.timairport.constraints.InPast;
 import be.technifutur.java.timairport.model.entity.Plane;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.PastOrPresent;
 import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 

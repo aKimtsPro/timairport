@@ -4,6 +4,7 @@ import be.technifutur.java.timairport.model.dto.PlaneDTO;
 import be.technifutur.java.timairport.model.form.PlaneInsertForm;
 import be.technifutur.java.timairport.service.PlaneService;
 import jakarta.validation.Valid;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -21,6 +22,7 @@ public class PlaneController {
     }
 
     @PostMapping("/add")
+//    @PreAuthorize("isAuthenticated()")
     public void create(@RequestBody @Valid PlaneInsertForm form){
         planeService.create( form );
     }
