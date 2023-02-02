@@ -1,6 +1,5 @@
 package be.technifutur.java.timairport.model.form;
 
-import be.technifutur.java.timairport.constraints.NotSameAs;
 import be.technifutur.java.timairport.constraints.NotSameAsConstraint;
 import be.technifutur.java.timairport.exceptions.FormValidationException;
 import be.technifutur.java.timairport.model.entity.Flight;
@@ -15,12 +14,14 @@ import java.util.Objects;
 @Data
 @NotSameAsConstraint(
         clazz = FlightCreateForm.class,
-        constraints = {
-                @NotSameAs(field1 = "captainId", field2 = "firstOfficerId"),
-                @NotSameAs(field1 = "departureAirportId", field2 = "arrivalAirportId")
-        }
+        field1 = "captainId",
+        field2 = "firstOfficerId"
 )
-
+@NotSameAsConstraint(
+        clazz = FlightCreateForm.class,
+        field1 = "departureAirportId",
+        field2 = "arrivalAirportId"
+)
 public class FlightCreateForm {
 
     @NotNull

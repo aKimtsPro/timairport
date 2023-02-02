@@ -1,9 +1,7 @@
 package be.technifutur.java.timairport.constraints;
 
-
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
-
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
@@ -21,16 +19,13 @@ public class NotSameAsValidator implements ConstraintValidator<NotSameAsConstrai
     @Override
     public boolean isValid(Object value, ConstraintValidatorContext context) {
 
-        boolean valid = true;
-        for (NotSameAs constraint : annotation.constraints()) {
-            if( !validateConstraint(constraint, value, context) )
-                valid = false;
-        }
-        return valid;
+        //        for (NotSameAs constraint : annotation.constraints()) {
+        //        }
+        return validateConstraint(annotation, value, context);
 
     }
 
-    private boolean validateConstraint(NotSameAs constraint, Object value,  ConstraintValidatorContext context){
+    private boolean validateConstraint(NotSameAsConstraint constraint, Object value,  ConstraintValidatorContext context){
 
         String fieldName1 = constraint.field1();
         String fieldName2 = constraint.field2();
