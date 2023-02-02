@@ -1,4 +1,4 @@
-package be.technifutur.java.timairport.constraints;
+package be.technifutur;
 
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;
@@ -12,7 +12,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = Not0Validator.class)
 public @interface Not0 {
-    String message() default "not 0!!!";
+    String message() default "Fields values shouldn't match!";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
 }

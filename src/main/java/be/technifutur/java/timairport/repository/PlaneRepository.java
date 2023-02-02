@@ -2,7 +2,6 @@ package be.technifutur.java.timairport.repository;
 
 import be.technifutur.java.timairport.model.entity.Company;
 import be.technifutur.java.timairport.model.entity.Plane;
-import be.technifutur.java.timairport.model.entity.TypePlane;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
