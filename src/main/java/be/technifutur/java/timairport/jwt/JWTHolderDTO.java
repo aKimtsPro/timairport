@@ -1,4 +1,4 @@
-package be.technifutur.java.timairport.model.dto;
+package be.technifutur.java.timairport.jwt;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

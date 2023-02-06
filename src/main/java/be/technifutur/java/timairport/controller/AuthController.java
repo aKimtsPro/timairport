@@ -1,6 +1,6 @@
 package be.technifutur.java.timairport.controller;
 
-import be.technifutur.java.timairport.model.dto.JWTHolderDTO;
+import be.technifutur.java.timairport.jwt.JWTHolderDTO;
 import be.technifutur.java.timairport.model.form.RegistrationForm;
 import be.technifutur.java.timairport.service.AuthService;
 import jakarta.validation.Valid;
