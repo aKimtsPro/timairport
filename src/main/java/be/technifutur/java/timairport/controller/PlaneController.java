@@ -1,9 +1,11 @@
 package be.technifutur.java.timairport.controller;
 
+import be.technifutur.java.timairport.exceptions.RessourceNotFoundException;
 import be.technifutur.java.timairport.model.dto.PlaneDTO;
 import be.technifutur.java.timairport.model.form.PlaneInsertForm;
 import be.technifutur.java.timairport.service.PlaneService;
 import jakarta.validation.Valid;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,6 +30,7 @@ public class PlaneController {
     }
 
     @GetMapping("/{id:[0-9]+}")
+    @PreAuthorize("isAuthenticated()")
     public PlaneDTO getOne(@PathVariable long id){
         return planeService.getOne(id);
     }
@@ -66,5 +69,6 @@ public class PlaneController {
     public void delete(@PathVariable long id){
         planeService.delete(id);
     }
+
 
 }
